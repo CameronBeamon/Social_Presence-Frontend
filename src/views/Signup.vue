@@ -10,6 +10,7 @@ export default {
     signUp: function () {
       axios.post("users", this.signUpParams).then((response) => {
         console.log(response.data);
+        this.$router.push("/login");
       });
     },
   },
