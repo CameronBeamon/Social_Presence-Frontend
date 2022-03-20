@@ -23,7 +23,7 @@ export default {
       });
     },
     getReddit: function () {
-      axios.get("all_reddit").then((response) => {
+      axios.get("all_reddit?access_token=" + localStorage.getItem("reddit_access_token")).then((response) => {
         // console.log("hi from axios get reddit");
         console.log(response.data.data.children);
         this.reddit = response.data.data.children;
@@ -35,6 +35,7 @@ export default {
         .then((response) => {
           console.log(response.data);
         });
+      setInterval(this.getTweets(), 10000);
     },
 
     deleteTweet: function (tweet_id) {
@@ -43,6 +44,7 @@ export default {
         .then((response) => {
           console.log(response.data);
         });
+      setInterval(this.getTweets(), 10000);
     },
   },
 };
@@ -73,7 +75,7 @@ export default {
       <h1>Twitter</h1>
       <div class="card text-dark bg-info mb-3" v-for="tweet in tweets" v-bind:key="tweet.id">
         <h5 class="card-title"></h5>
-        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+
         <p class="card-text">
           {{ tweet.text }}
         </p>
@@ -90,7 +92,7 @@ export default {
       <h1>Reddit</h1>
       <div class="card text-white bg-danger mb-3" v-for="post in reddit" v-bind:key="post.id">
         <h5 class="card-title">{{ post.data.title }}</h5>
-        <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+
         <p class="card-text">
           {{ post.data.selftext }}
         </p>

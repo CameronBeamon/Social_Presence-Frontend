@@ -15,6 +15,7 @@ export default {
         this.params.code = this.$route.query.code;
         axios.post("authorize_reddit", this.params).then((response) => {
           console.log(response.data);
+          localStorage.setItem("reddit_access_token", response.data.access_token);
           this.$router.push("/");
         });
       } else {
