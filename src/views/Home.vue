@@ -51,7 +51,7 @@ export default {
 </script>
 
 <template>
-  <div v-if="tweets == []">
+  <div>
     <a
       href="https://twitter.com/i/oauth2/authorize?response_type=code&client_id=TTdpSkc2VWpUQ2ROb0VRbElSWVo6MTpjaQ&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fauth_twitter&scope=tweet.read%20users.read%20follows.read%20follows.write%20tweet.write&state=state&code_challenge=challenge&code_challenge_method=plain"
     >
@@ -59,7 +59,7 @@ export default {
     </a>
   </div>
 
-  <div v-if="reddit == []">
+  <div>
     <a
       href="https://www.reddit.com/api/v1/authorize?client_id=WowSbZkYVX1m_ylWm8dQKA&response_type=code&state=RANDOM_STRING&redirect_uri=http://localhost:8080/auth_reddit&duration=permanent&scope=privatemessages identity"
     >
@@ -86,7 +86,7 @@ export default {
 
     <div class="card" style="width: 10px">
       <div>
-        <textarea name="tweet" id="tweet-box" cols="50" rows="5" v-model="params.text"></textarea>
+        <textarea name="tweet" id="reddit-box" cols="50" rows="5" v-model="params.reddit_text"></textarea>
         <div><button v-on:click="postReddit()">Post to reddit</button></div>
       </div>
       <h1>Reddit</h1>
@@ -100,5 +100,49 @@ export default {
         <a v-on:click="deleteTweet()" href="#" class="card-link">Delete</a>
       </div>
     </div>
+
+    <div class="card" style="width: 10px">
+      <div>
+        <textarea name="tweet" id="face-box" cols="50" rows="5" v-model="params.face_text"></textarea>
+        <div><button v-on:click="postFacebook()">Post to FaceBook</button></div>
+      </div>
+      <h1>Facebook</h1>
+      <div class="card text-white bg-danger mb-3">
+        <h5 class="card-title">Facebook post</h5>
+
+        <p class="card-text">Facebook post</p>
+        <a href="" class="card-link">View</a>
+        <a v-on:click="deleteTweet()" href="#" class="card-link">Delete</a>
+      </div>
+    </div>
+
+    <div class="card" style="width: 10px">
+      <div>
+        <textarea name="tweet" id="insta-box" cols="50" rows="5" v-model="params.insta_text"></textarea>
+        <div><button v-on:click="postInsta()">Post to Instagram</button></div>
+      </div>
+      <h1>Instagram</h1>
+      <div class="card text-white bg-danger mb-3">
+        <h5 class="card-title">Instagram</h5>
+
+        <p class="card-text">Instagram Post</p>
+        <a href="" class="card-link">View</a>
+        <a v-on:click="deleteTweet()" href="#" class="card-link">Delete</a>
+      </div>
+    </div>
   </div>
 </template>
+
+<style>
+#card {
+  padding: 10px;
+}
+.face-box {
+  padding: 10px;
+  border-color: blue;
+}
+.reddit-box {
+  padding: 10px;
+  border-color: blue;
+}
+</style>
