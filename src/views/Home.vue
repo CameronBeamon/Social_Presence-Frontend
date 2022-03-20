@@ -51,26 +51,18 @@ export default {
 </script>
 
 <template>
-  <div>
-    <a
-      href="https://twitter.com/i/oauth2/authorize?response_type=code&client_id=TTdpSkc2VWpUQ2ROb0VRbElSWVo6MTpjaQ&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fauth_twitter&scope=tweet.read%20users.read%20follows.read%20follows.write%20tweet.write&state=state&code_challenge=challenge&code_challenge_method=plain"
-    >
-      Sign in with twitter
-    </a>
-  </div>
-
-  <div>
-    <a
-      href="https://www.reddit.com/api/v1/authorize?client_id=WowSbZkYVX1m_ylWm8dQKA&response_type=code&state=RANDOM_STRING&redirect_uri=http://localhost:8080/auth_reddit&duration=permanent&scope=privatemessages identity"
-    >
-      Sign in with Reddit
-    </a>
-  </div>
   <div class="card-group">
     <div class="card" style="width: 10px">
       <div>
         <textarea name="tweet" id="tweet-box" cols="50" rows="5" v-model="params.text"></textarea>
         <div><button v-on:click="postTweet()">Tweet!</button></div>
+      </div>
+      <div>
+        <a
+          href="https://twitter.com/i/oauth2/authorize?response_type=code&client_id=TTdpSkc2VWpUQ2ROb0VRbElSWVo6MTpjaQ&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fauth_twitter&scope=tweet.read%20users.read%20follows.read%20follows.write%20tweet.write&state=state&code_challenge=challenge&code_challenge_method=plain"
+        >
+          Sign in with twitter
+        </a>
       </div>
       <h1>Twitter</h1>
       <div class="card text-dark bg-info mb-3" v-for="tweet in tweets" v-bind:key="tweet.id">
@@ -88,6 +80,13 @@ export default {
       <div>
         <textarea name="tweet" id="reddit-box" cols="50" rows="5" v-model="params.reddit_text"></textarea>
         <div><button v-on:click="postReddit()">Post to reddit</button></div>
+      </div>
+      <div>
+        <a
+          href="https://www.reddit.com/api/v1/authorize?client_id=WowSbZkYVX1m_ylWm8dQKA&response_type=code&state=RANDOM_STRING&redirect_uri=http://localhost:8080/auth_reddit&duration=permanent&scope=privatemessages identity"
+        >
+          Sign in with Reddit
+        </a>
       </div>
       <h1>Reddit</h1>
       <div class="card text-white bg-danger mb-3" v-for="post in reddit" v-bind:key="post.id">
