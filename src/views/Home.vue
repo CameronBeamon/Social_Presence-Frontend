@@ -55,7 +55,7 @@ export default {
   <div class="card-group">
     <div class="card text-white bg-dark mb-3">
       <div>
-        <textarea name="tweet" id="tweet-box" cols="50" rows="5" v-model="params.text"></textarea>
+        <textarea name="tweet" id="tweet-box" cols="30" rows="5" v-model="params.text"></textarea>
         <div><button v-on:click="postTweet()">Tweet!</button></div>
       </div>
       <div>
@@ -79,7 +79,7 @@ export default {
 
     <div class="card text-white bg-dark mb-3">
       <div>
-        <textarea name="tweet" id="reddit-box" cols="50" rows="5" v-model="params.reddit_text"></textarea>
+        <textarea name="tweet" id="reddit-box" cols="30" rows="5" v-model="params.reddit_text"></textarea>
         <div><button v-on:click="postReddit()">Post to reddit</button></div>
       </div>
       <div>
@@ -103,7 +103,7 @@ export default {
 
     <div class="card text-white bg-dark mb-3">
       <div>
-        <textarea name="tweet" id="face-box" cols="50" rows="5" v-model="params.face_text"></textarea>
+        <textarea name="tweet" id="face-box" cols="30" rows="5" v-model="params.face_text"></textarea>
         <div><button v-on:click="postFacebook()">Post to FaceBook</button></div>
       </div>
       <h1>Facebook</h1>
@@ -118,7 +118,7 @@ export default {
 
     <div class="card text-white bg-dark mb-3">
       <div>
-        <textarea name="tweet" id="insta-box" cols="50" rows="5" v-model="params.insta_text"></textarea>
+        <textarea name="tweet" id="insta-box" cols="30" rows="5" v-model="params.insta_text"></textarea>
         <div><button v-on:click="postInsta()">Post to Instagram</button></div>
       </div>
       <h1>Instagram</h1>
