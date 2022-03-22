@@ -96,7 +96,7 @@ export default {
           {{ post.data.selftext }}
         </p>
         <a href="" class="card-link">View</a>
-        <a v-on:click="deleteTweet()" href="#" class="card-link">Delete</a>
+        <a v-on:click="deleteReddit()" href="#" class="card-link">Delete</a>
       </div>
     </div>
 
@@ -111,7 +111,7 @@ export default {
 
         <p class="card-text">Facebook post</p>
         <a href="" class="card-link">View</a>
-        <a v-on:click="deleteTweet()" href="#" class="card-link">Delete</a>
+        <a v-on:click="deleteFace()" href="#" class="card-link">Delete</a>
       </div>
     </div>
 
@@ -126,7 +126,7 @@ export default {
 
         <p class="card-text">Instagram Post</p>
         <a href="" class="card-link">View</a>
-        <a v-on:click="deleteTweet()" href="#" class="card-link">Delete</a>
+        <a v-on:click="deleteInsta()" href="#" class="card-link">Delete</a>
       </div>
     </div>
   </div>
@@ -138,10 +138,6 @@ export default {
 }
 .face-box {
   padding: 10px;
-  border-color: blue;
-}
-.reddit-box {
-  padding: 10px;
-  border-color: blue;
+  border-color: rgb(255, 0, 13);
 }
 </style>
