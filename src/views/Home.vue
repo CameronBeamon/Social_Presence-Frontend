@@ -13,6 +13,7 @@ export default {
 
     this.getReddit();
   },
+
   methods: {
     getTweets: function () {
       console.log("hi from get tweets");
@@ -52,7 +53,7 @@ export default {
 
 <template>
   <div class="card-group">
-    <div class="card" style="width: 10px">
+    <div class="card text-white bg-dark mb-3">
       <div>
         <textarea name="tweet" id="tweet-box" cols="50" rows="5" v-model="params.text"></textarea>
         <div><button v-on:click="postTweet()">Tweet!</button></div>
@@ -76,7 +77,7 @@ export default {
       </div>
     </div>
 
-    <div class="card" style="width: 10px">
+    <div class="card text-white bg-dark mb-3">
       <div>
         <textarea name="tweet" id="reddit-box" cols="50" rows="5" v-model="params.reddit_text"></textarea>
         <div><button v-on:click="postReddit()">Post to reddit</button></div>
@@ -100,28 +101,28 @@ export default {
       </div>
     </div>
 
-    <div class="card" style="width: 10px">
+    <div class="card text-white bg-dark mb-3">
       <div>
         <textarea name="tweet" id="face-box" cols="50" rows="5" v-model="params.face_text"></textarea>
         <div><button v-on:click="postFacebook()">Post to FaceBook</button></div>
       </div>
       <h1>Facebook</h1>
-      <div class="card text-white bg-danger mb-3">
+      <div class="card text-white bg-primary mb-3">
         <h5 class="card-title">Facebook post</h5>
 
         <p class="card-text">Facebook post</p>
-        <a href="" class="card-link">View</a>
-        <a v-on:click="deleteFace()" href="#" class="card-link">Delete</a>
+        <a href="" class="card-link" style="color: white">View</a>
+        <a v-on:click="deleteFace()" style="color: white" href="#" class="card-link">Delete</a>
       </div>
     </div>
 
-    <div class="card" style="width: 10px">
+    <div class="card text-white bg-dark mb-3">
       <div>
         <textarea name="tweet" id="insta-box" cols="50" rows="5" v-model="params.insta_text"></textarea>
         <div><button v-on:click="postInsta()">Post to Instagram</button></div>
       </div>
       <h1>Instagram</h1>
-      <div class="card text-white bg-danger mb-3">
+      <div class="card text-dark bg-warning mb-3">
         <h5 class="card-title">Instagram</h5>
 
         <p class="card-text">Instagram Post</p>
@@ -133,7 +134,7 @@ export default {
 </template>
 
 <style>
-#card {
+.card {
   padding: 10px;
 }
 .face-box {

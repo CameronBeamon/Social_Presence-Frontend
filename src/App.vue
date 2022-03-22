@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Social Presence</a>
       <button
@@ -50,3 +50,9 @@ export default {
   <div id="nav"></div>
   <router-view />
 </template>
+
+<style>
+body {
+  background-color: rgb(5, 23, 29) !important;
+}
+</style>
