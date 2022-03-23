@@ -5,7 +5,9 @@ export default {
     return {
       tweets: [],
       reddit: [],
-      params: {},
+      params: {
+        reddit_title: "Title required",
+      },
     };
   },
   created: function () {
@@ -37,6 +39,17 @@ export default {
           console.log(response.data);
         });
       setInterval(this.getTweets(), 10000);
+    },
+    postReddit: function () {
+      axios
+        .post(
+          `all_reddit?access_token=${localStorage.getItem("reddit_access_token")}&text=${
+            this.params.reddit_text
+          }&title=${this.params.reddit_title}`
+        )
+        .then((response) => {
+          console.log(response);
+        });
     },
 
     deleteTweet: function (tweet_id) {
@@ -80,11 +93,14 @@ export default {
     <div class="card text-white bg-dark mb-3">
       <div>
         <textarea name="tweet" id="reddit-box" cols="30" rows="5" v-model="params.reddit_text"></textarea>
-        <div><button v-on:click="postReddit()">Post to reddit</button></div>
+        <div>
+          <button v-on:click="postReddit()">Post to reddit</button>
+          <input type="text" v-model="this.params.reddit_title" style="width: 150px" />
+        </div>
       </div>
       <div>
         <a
-          href="https://www.reddit.com/api/v1/authorize?client_id=WowSbZkYVX1m_ylWm8dQKA&response_type=code&state=RANDOM_STRING&redirect_uri=http://localhost:8080/auth_reddit&duration=permanent&scope=privatemessages identity"
+          href="https://www.reddit.com/api/v1/authorize?client_id=WowSbZkYVX1m_ylWm8dQKA&response_type=code&state=RANDOM_STRING&redirect_uri=http://localhost:8080/auth_reddit&duration=permanent&scope=privatemessages identity submit"
         >
           Sign in with Reddit
         </a>
@@ -106,6 +122,7 @@ export default {
         <textarea name="tweet" id="face-box" cols="30" rows="5" v-model="params.face_text"></textarea>
         <div><button v-on:click="postFacebook()">Post to FaceBook</button></div>
       </div>
+      <a href="#">Sign in with Facebook</a>
       <h1>Facebook</h1>
       <div class="card text-white bg-primary mb-3">
         <h5 class="card-title">Facebook post</h5>
@@ -121,6 +138,7 @@ export default {
         <textarea name="tweet" id="insta-box" cols="30" rows="5" v-model="params.insta_text"></textarea>
         <div><button v-on:click="postInsta()">Post to Instagram</button></div>
       </div>
+      <a href="#">Sign in with Instagram</a>
       <h1>Instagram</h1>
       <div class="card text-dark bg-warning mb-3">
         <h5 class="card-title">Instagram</h5>
