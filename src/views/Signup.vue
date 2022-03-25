@@ -8,7 +8,7 @@ export default {
   },
   methods: {
     signUp: function () {
-      axios.post("users", this.signUpParams).then((response) => {
+      axios.post("https://tranquil-lowlands-66033.herokuapp.com/users", this.signUpParams).then((response) => {
         console.log(response.data);
         this.$router.push("/login");
       });
@@ -20,7 +20,7 @@ export default {
 <template>
   <div>
     Name:
-    <input type="text" v-model="signUpParams.email" />
+    <input type="text" v-model="signUpParams.name" />
   </div>
   <div>
     Email:

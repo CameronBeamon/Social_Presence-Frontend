@@ -8,7 +8,7 @@ export default {
   },
   methods: {
     login: function () {
-      axios.post("sessions", this.loginParams).then((response) => {
+      axios.post("https://tranquil-lowlands-66033.herokuapp.com/sessions", this.loginParams).then((response) => {
         console.log(response.data);
         localStorage.setItem("jwt", response.data["jwt"]);
         this.$router.push("/");

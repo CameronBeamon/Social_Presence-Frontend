@@ -19,22 +19,36 @@ export default {
   methods: {
     getTweets: function () {
       console.log("hi from get tweets");
-      axios.get("all_tweets?access_token=" + localStorage.getItem("twitter_access_token")).then((response) => {
-        // console.log("hi from axios get tweets");
-        this.tweets = response.data.data;
-        console.log(response);
-      });
+      axios
+        .get(
+          "https://tranquil-lowlands-66033.herokuapp.com/all_tweets?access_token=" +
+            localStorage.getItem("twitter_access_token")
+        )
+        .then((response) => {
+          // console.log("hi from axios get tweets");
+          this.tweets = response.data.data;
+          console.log(response);
+        });
     },
     getReddit: function () {
-      axios.get("all_reddit?access_token=" + localStorage.getItem("reddit_access_token")).then((response) => {
-        // console.log("hi from axios get reddit");
-        console.log(response.data.data.children);
-        this.reddit = response.data.data.children;
-      });
+      axios
+        .get(
+          "https://tranquil-lowlands-66033.herokuapp.com/all_reddit?access_token=" +
+            localStorage.getItem("reddit_access_token")
+        )
+        .then((response) => {
+          // console.log("hi from axios get reddit");
+          console.log(response.data.data.children);
+          this.reddit = response.data.data.children;
+        });
     },
     postTweet: function () {
       axios
-        .post(`all_tweets?access_token=${localStorage.getItem("twitter_access_token")}&text=${this.params.text}`)
+        .post(
+          `https://tranquil-lowlands-66033.herokuapp.com/all_tweets?access_token=${localStorage.getItem(
+            "twitter_access_token"
+          )}&text=${this.params.text}`
+        )
         .then((response) => {
           console.log(response.data);
         });
@@ -43,9 +57,9 @@ export default {
     postReddit: function () {
       axios
         .post(
-          `all_reddit?access_token=${localStorage.getItem("reddit_access_token")}&text=${
-            this.params.reddit_text
-          }&title=${this.params.reddit_title}`
+          `https://tranquil-lowlands-66033.herokuapp.com/all_reddit?access_token=${localStorage.getItem(
+            "reddit_access_token"
+          )}&text=${this.params.reddit_text}&title=${this.params.reddit_title}`
         )
         .then((response) => {
           console.log(response);
@@ -54,7 +68,11 @@ export default {
 
     deleteTweet: function (tweet_id) {
       axios
-        .delete(`all_tweets/${tweet_id}?access_token=${localStorage.getItem("twitter_access_token")}`)
+        .delete(
+          `https://tranquil-lowlands-66033.herokuapp.com/all_tweets/${tweet_id}?access_token=${localStorage.getItem(
+            "twitter_access_token"
+          )}`
+        )
         .then((response) => {
           console.log(response.data);
         });

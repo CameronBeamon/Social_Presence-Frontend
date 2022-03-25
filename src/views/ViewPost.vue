@@ -14,7 +14,7 @@ export default {
   methods: {
     getTweet: function () {
       this.params.tweet_id = this.$route.params.id;
-      axios.get("all_tweets/" + this.params.tweet_id).then((response) => {
+      axios.get("https://tranquil-lowlands-66033.herokuapp.com/all_tweets/" + this.params.tweet_id).then((response) => {
         console.log(response.data.data);
         this.tweet = response.data.data.text;
         console.log(this.tweet);
