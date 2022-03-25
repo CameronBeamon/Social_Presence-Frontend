@@ -27,7 +27,6 @@ export default {
         .then((response) => {
           // console.log("hi from axios get tweets");
           this.tweets = response.data.data;
-          console.log(response);
         });
     },
     getReddit: function () {
@@ -37,8 +36,6 @@ export default {
             localStorage.getItem("reddit_access_token")
         )
         .then((response) => {
-          // console.log("hi from axios get reddit");
-          console.log(response.data.data.children);
           this.reddit = response.data.data.children;
         });
     },
