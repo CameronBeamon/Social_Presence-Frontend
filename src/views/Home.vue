@@ -91,7 +91,7 @@ export default {
       </div>
       <div>
         <a
-          href="https://twitter.com/i/oauth2/authorize?response_type=code&client_id=TTdpSkc2VWpUQ2ROb0VRbElSWVo6MTpjaQ&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Fauth_twitter&scope=tweet.read%20users.read%20follows.read%20follows.write%20tweet.write&state=state&code_challenge=challenge&code_challenge_method=plain"
+          href="https://twitter.com/i/oauth2/authorize?response_type=code&client_id=TTdpSkc2VWpUQ2ROb0VRbElSWVo6MTpjaQ&redirect_uri=https%3A%2F%2Fcosmic-naiad-083ba7.netlify.app%2Fauth_twitter&scope=tweet.read%20users.read%20follows.read%20follows.write%20tweet.write&state=state&code_challenge=challenge&code_challenge_method=plain"
         >
           Sign in with twitter
         </a>
@@ -118,7 +118,7 @@ export default {
       </div>
       <div>
         <a
-          href="https://www.reddit.com/api/v1/authorize?client_id=WowSbZkYVX1m_ylWm8dQKA&response_type=code&state=RANDOM_STRING&redirect_uri=http://localhost:8080/auth_reddit&duration=permanent&scope=privatemessages identity submit"
+          href="https://www.reddit.com/api/v1/authorize?client_id=WowSbZkYVX1m_ylWm8dQKA&response_type=code&state=RANDOM_STRING&redirect_uri=https://cosmic-naiad-083ba7.netlify.app/auth_reddit&duration=permanent&scope=privatemessages identity submit"
         >
           Sign in with Reddit
         </a>
