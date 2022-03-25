@@ -16,7 +16,6 @@ export default {
         this.params.code = this.$route.query.code;
         console.log(this.params);
         axios.post("https://tranquil-lowlands-66033.herokuapp.com/authorize", this.params).then((response) => {
-          console.log(response.data);
           localStorage.setItem("twitter_access_token", response.data.access_token);
           this.$router.push("/");
         });
