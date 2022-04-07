@@ -7,6 +7,8 @@ export default {
       reddit: [],
       params: {
         reddit_title: "Title required",
+        face_text: "Not wokring yet",
+        insta_text: "Not working yet",
       },
     };
   },
